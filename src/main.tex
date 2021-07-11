@@ -83,19 +83,27 @@
     \end{adjustwidth}
 }
 
-Decision elements
+% Decision elements
 \newcounter{decision}
 \newenvironment{decision}[2]{
     \refstepcounter{decision}
-    % \label{#1}
+    \label{#1}
     \par\textbf{Entscheidung~\thedecision:}~#2
-    \begin{enumerate}[label=\textbf{Option \arabic*:}]
+    \begin{enumerate}[label={Option \arabic*:}, font=\bfseries]
     }{
     \end{enumerate}
 }
-\newenvironment{option}[2]{\item #2}{\textit{(Ende des Entscheidungsastes.)}}
 
-\newenvironment{conditional}[2]{Wenn Entscheidung~\ref{#1}, Option~\ref{#2}:}{\textit{(Ende des optionalen Astes.)}}
+\newcommand{\itemNumber}{\number\numexpr\value{enumi}\relax}
+\newenvironment{option}[2]{\item #2 \label{#1}}{\textit{(Ende von Entscheidung \thedecision~Option \itemNumber)}}
+
+\newcounter{conditional}
+\newenvironment{conditional}[2]{
+    \refstepcounter{conditional}
+    \textbf{Bedingung \theconditional:} Wenn Entscheidung~\ref{#1},~\ref{#2}:
+        }{
+    \textit{(Ende von Bedingung \theconditional.)}
+}
 
 % Characters
 \input{characters.tex}
@@ -213,16 +221,45 @@ Decision elements
         \begin{conditional}{erste-entscheidung}{test-label}
             \begin{dialog}{Polizist}
                 Leider haben Sie die falsche option bei Entscheidung~\ref{erste-entscheidung} gewählt.
-                Wie wär's mit~\ref{#1} oder mit~\ref{test-label}?
             \end{dialog}
         \end{conditional}
+
     \end{scene}
 
-    \begin{enumerate}
-        \item First item
-        \item \label{itm:bla-blub} Second item
-    \end{enumerate}
-
-    Hier reference~\ref{itm:bla-blub}
+    \begin{scene}{innen}{Verschachtelte Entscheidungen}{Tageszeit unbekannt}
+        \begin{scenedescription}
+            In dieser Szene geht es um die Darstellung verschachtelter Entscheidungen.
+        \end{scenedescription}
+        \begin{decision}{obere-ebene-verschachtelte-entscheidung}{Eine verschachtelte Entscheidung -- obere Ebene}
+            \begin{option}{nested-option-1}{Erste Option}
+                \begin{decision}{erste-innere-entscheidung}{Hier die erste verschachtelte Option - innen}
+                    \begin{option}{innen-entscheidung-1-option1}{Innen ENtscheidung 1, Option 1}
+                        \begin{dialog}{Emma}
+                            Innere Entscheidung, hier ist die erste Option.
+                        \end{dialog}
+                    \end{option}
+                    \begin{option}{innen-entscheidung-1-option2}{Eine weitere innere Option}
+                        \begin{dialog}{Emma}
+                            Und hier die zweite Option der ersten inneren Entscheidung.
+                        \end{dialog}
+                    \end{option}
+                \end{decision}
+            \end{option}
+            \begin{option}{nested-option-2}{Eine weitere äußere Option}
+                \begin{decision}{zweite-innere-entscheidung}{Hier die zweite verschachtelte Option - innen}
+                    \begin{option}{innen-entscheidung-2-option1}{Innen ENtscheidung 2, Option 1}
+                        \begin{dialog}{Emma}
+                            Zweite innere Entscheidung, hier ist die erste Option.
+                        \end{dialog}
+                    \end{option}
+                    \begin{option}{innen-entscheidung-2-option2}{Eine weitere innere Option}
+                        \begin{dialog}{Emma}
+                            Und hier die zweite Option der zweiten inneren Entscheidung.
+                        \end{dialog}
+                    \end{option}
+                \end{decision}
+            \end{option}
+        \end{decision}
+    \end{scene}
 
 \end{document}
