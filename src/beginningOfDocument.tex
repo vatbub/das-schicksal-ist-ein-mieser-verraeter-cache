@@ -1,0 +1,31 @@
+\fontfamily{pcr}\selectfont
+
+\begin{titlepage}
+    \centering
+    \vglue6cm
+    „\MakeUppercase{\thetitle}“
+
+    \vspace{2cm}
+    \translationWrittenBy
+
+    \theauthor
+
+    \vspace{2cm}
+    \translationBasedOn
+
+    \BasedOn
+
+    \ifdefined\TitleSlug
+    \vspace{2cm}
+
+    \begin{adjustwidth}{1cm}{1cm}
+        \begin{center}
+            \begin{tabular}{ P{13cm} }
+                \hline
+                \textit{\TitleSlug} \\
+                \hline
+            \end{tabular}
+        \end{center}
+    \end{adjustwidth}
+    \fi
+\end{titlepage}
