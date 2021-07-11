@@ -4,6 +4,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
+% Translation
+\input{translation-german.tex}
+
 % Document font
 \usepackage{courier}
 
@@ -33,7 +36,7 @@
 \makeglossaries
 
 % Appearance of characters
-\newcommand{\character}[2][No character description specified.]{\newacronym{#2}{#2}{#1}}
+\newcommand{\character}[2][\translationDefaultCharacterDescription]{\newacronym{#2}{#2}{#1}}
 \newacronymstyle{screenplay-characters}
 {%
     \GlsUseAcrEntryDispStyle{short-long}%
@@ -96,15 +99,15 @@
     align=left
 }
 \setlist[optionlist, 1]{
-    label=Option \arabic*:,
+    label=\translationOptionLabel~\arabic*:,
     ref=\arabic*
 }
 \setlist[optionlist, 2]{
-    label=Option \theoptionlisti.\arabic*:,
+    label=\translationOptionLabel~\theoptionlisti.\arabic*:,
     ref=\theoptionlisti.\arabic*
 }
 \setlist[optionlist, 3]{
-    label=Option \theoptionlisti.\theoptionlistii.\arabic*:,
+    label=\translationOptionLabel~\theoptionlisti.\theoptionlistii.\arabic*:,
     ref=\theoptionlisti.\theoptionlistii.\arabic*
 }
 
@@ -116,7 +119,7 @@
     \addtocounter{DecisionEnvironmentDepth}{1}% increment depth
     \expandafter\newcommand\csname DecisionLabel\the\value{DecisionEnvironmentDepth} \endcsname{#1}
     \label{#1}
-    \par\textbf{Entscheidung~\thedecision:}~#2
+    \par\textbf{\translationDecisionLabel~\thedecision:}~#2
     \begin{optionlist}
     }{
     \end{optionlist}
@@ -135,16 +138,21 @@
     \begin{adjustwidth}{\enumerateIndent}{0cm*\value{OptionEnvironmentDepth}}
     }{
     \end{adjustwidth}
-    \textit{(Ende von Entscheidung~\ref{\csname DecisionLabel\the\value{DecisionEnvironmentDepth} \endcsname},~Option~\ref{\currentOptionLabel})}
+    \textit{(\translationEndOfBranch~\translationDecisionLabel~\ref{\csname DecisionLabel\the\value{DecisionEnvironmentDepth} \endcsname},~\translationOptionLabel~\ref{\currentOptionLabel})}
     \addtocounter{OptionEnvironmentDepth}{-1}% decrement depth
 }
 
+\newcounter{ConditionalEnvironmentDepth}
+\setcounter{ConditionalEnvironmentDepth}{0}
 \newcounter{conditional}
 \newenvironment{conditional}[2]{
     \refstepcounter{conditional}
-    \textbf{Bedingung \theconditional:} Wenn Entscheidung~\ref{#1}, Option~\ref{#2}:
+    \addtocounter{ConditionalEnvironmentDepth}{1}% increment depth
+    \expandafter\newcommand\csname ConditionalCounter\the\value{ConditionalEnvironmentDepth} \endcsname{\theconditional}
+    \textbf{\translationConditionalLabel~\theconditional:} \translationBeginningOfConditional~\translationDecisionLabel~\ref{#1}, \translationOptionLabel~\ref{#2}:
         }{
-    \textit{(Ende von Bedingung \theconditional.)}
+    \textit{(\translationEndOfBranch~\translationConditionalLabel~\csname ConditionalCounter\the\value{ConditionalEnvironmentDepth} \endcsname.)}
+    \addtocounter{ConditionalEnvironmentDepth}{-1}% decrement depth
 }
 
 % Characters
@@ -167,12 +175,12 @@
         „\MakeUppercase{\thetitle}“
 
         \vspace{2cm}
-        Geschrieben von:
+        \translationWrittenBy
 
         \theauthor
 
         \vspace{2cm}
-        Basierend auf:
+        \translationBasedOn
 
         \BasedOn
 
