@@ -1,0 +1,228 @@
+% Preamble
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Document font
+\usepackage{courier}
+
+% Margins
+\usepackage[a4paper, top=2.5cm, bottom=2cm, left=2.5cm, right=2.5cm]{geometry}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
+
+% Packages
+\usepackage{glossaries}
+\usepackage{changepage}
+\usepackage{xparse}
+\usepackage{titling}
+\usepackage{array}
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+
+% For title slug
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\makeglossaries
+
+% Appearance of characters
+\newcommand{\character}[2][No character description specified.]{\newacronym{#2}{#2}{#1}}
+\newacronymstyle{screenplay-characters}
+{%
+    \GlsUseAcrEntryDispStyle{short-long}%
+}
+{%
+    \GlsUseAcrStyleDefs{short-long}%
+    \renewcommand{\firstacronymfont}[1]{\MakeUppercase{##1}}%
+    %
+    % No case change, singular first use:
+    \renewcommand*{\genacrfullformat}[2]{%
+        \firstacronymfont{\glsentryshort{##1}}%
+    }%
+    % First letter upper case, singular first use:
+    \renewcommand*{\Genacrfullformat}[2]{%
+        \firstacronymfont{\Glsentryshort{##1}}%
+    }%
+    % No case change, plural first use:
+    \renewcommand*{\genplacrfullformat}[2]{%
+        \firstacronymfont{\glsentryshortpl{##1}}%
+    }%
+    % First letter upper case, plural first use:
+    \renewcommand*{\Genplacrfullformat}[2]{%
+        \firstacronymfont{\Glsentryshortpl{##1}}%
+    }%
+}
+
+\setacronymstyle{screenplay-characters}
+
+% Elements of a scene
+\newenvironment{scene}[4][\unskip]{
+    \textbf{\uppercase{#1}}
+
+
+    \section{\uppercase{#2 #3 -- #4}}\label{sec:scene-#3}
+    }{}
+\newenvironment{scenedescription}{%
+    \begin{flushleft}
+    }{
+    \end{flushleft}
+}
+
+\newcommand{\actionline}[1]{#1}
+
+% Dialog elements
+\NewDocumentEnvironment{dialog} { o m } {
+    \begin{adjustwidth}{6.5cm}{0cm}
+        \uppercase{#2}\IfValueT{#1}{\uppercase{~(#1)}}
+    \end{adjustwidth}
+    \begin{adjustwidth}{2.5cm}{0cm}
+        \begin{flushleft}
+        }{
+        \end{flushleft}
+    \end{adjustwidth}
+}
+
+Decision elements
+\newcounter{decision}
+\newenvironment{decision}[2]{
+    \refstepcounter{decision}
+    % \label{#1}
+    \par\textbf{Entscheidung~\thedecision:}~#2
+    \begin{enumerate}[label=\textbf{Option \arabic*:}]
+    }{
+    \end{enumerate}
+}
+\newenvironment{option}[2]{\item #2}{\textit{(Ende des Entscheidungsastes.)}}
+
+\newenvironment{conditional}[2]{Wenn Entscheidung~\ref{#1}, Option~\ref{#2}:}{\textit{(Ende des optionalen Astes.)}}
+
+% Characters
+\input{characters.tex}
+
+% Title
+\title{Das Schicksal ist ein mieser Verräter}
+\author{Frederik Kammel}
+\newcommand{\BasedOn}{Das Schicksal ist ein mieser Verräter, John Green}
+\newcommand{\TitleSlug}{Stell dir vor, dein Leben liegt in Trümmern. \newline Der letzte Kuss ist Jahre her.}
+
+% Document
+\begin{document}
+
+    \fontfamily{pcr}\selectfont
+
+    \begin{titlepage}
+        \centering
+        \vglue6cm
+        „\MakeUppercase{\thetitle}“
+
+        \vspace{2cm}
+        Geschrieben von:
+
+        \theauthor
+
+        \vspace{2cm}
+        Basierend auf:
+
+        \BasedOn
+
+        \ifdefined\TitleSlug
+        \vspace{2cm}
+
+        \begin{adjustwidth}{1cm}{1cm}
+            \begin{center}
+                \begin{tabular}{ P{13cm} }
+                    \hline
+                    \textit{\TitleSlug} \\
+                    \hline
+                \end{tabular}
+            \end{center}
+        \end{adjustwidth}
+        \fi
+    \end{titlepage}
+
+
+    \begin{scene}[fade in]{innen}{Verhör}{Tageszeit unbekannt}
+        \begin{scenedescription}
+            \gls{Emma}, eine 40 Jahre alte Frau mit faltigem Gesicht sitzt an einem Tisch.
+            Ihr gegenüber sitzt ein \gls{Polizist}, auf dem Tisch stehen zwei Mikrofone, eines zeigt zum \gls{Polizist}en, eines zu Emma.
+            Das Licht fällt so, dass der Tisch gut sichtbar und die Gesichter der Personen gerade so sichtbar sind.
+            Der Rest des Raumes ist schwarz.
+        \end{scenedescription}
+
+        \begin{dialog}{Polizist}
+            Sie wissen, warum Sie hier sind?
+        \end{dialog}
+
+        \actionline{\gls{Emma} schweigt.}
+
+        \begin{dialog}[Fortsetzung]{Polizist}
+            Sie müssen mir nichts sagen, aber wenn Sie schweigen, werden wir Sie bis auf Weiteres festnehmen müssen.
+        \end{dialog}
+    \end{scene}
+
+    \begin{scene}{aussen}{Flashback}{tagsüber}
+        \begin{scenedescription}
+            \gls{Emma} liegt auf dem Boden und wird von einer anderen Person erwürgt.
+            \gls{Emma} schreit und versucht, sich aus dem Würgegriff zu befreien, in ihrem Blick ist die Angst vor dem Tod deutlich zu sehen.
+        \end{scenedescription}
+    \end{scene}
+
+    \begin{scene}{innen}{Verhör (Fortsetzung)}{Tageszeit unbekannt}
+        \begin{dialog}{Emma}
+            Ich war es nicht.
+            Er war es!
+        \end{dialog}
+
+        \begin{dialog}{Polizist}
+            Und wer ist „er“?
+        \end{dialog}
+
+        \actionline{Emma spielt mit ihren Händen (Beat).}
+
+        \begin{dialog}{Emma}
+            Wen ich Ihnen das sage, wird er Sie töten.
+        \end{dialog}
+
+        \begin{decision}{erste-entscheidung}{Eine Beispielentscheidung}
+            \begin{option}{test-label}{Test}
+                \begin{dialog}{Emma}
+                    Hier spreche ich eine Option.
+                \end{dialog}
+            \end{option}
+            \begin{option}{test-label-other}{Eine weitere Option}
+                \begin{dialog}{Emma}
+                    Und hier die zweite Option.
+                \end{dialog}
+            \end{option}
+        \end{decision}
+
+        \begin{decision}{zweite-entscheidung}{Eine weitere Beispielentscheidung}
+            \begin{option}{more-test-label}{Test}
+                \begin{dialog}{Emma}
+                    Nächste Entscheidung, hier ist die erste Option.
+                \end{dialog}
+            \end{option}
+            \begin{option}{more-test-label-other}{Eine weitere Option}
+                \begin{dialog}{Emma}
+                    Und hier die zweite Option der zweiten Entscheidung.
+                \end{dialog}
+            \end{option}
+        \end{decision}
+
+        \begin{conditional}{erste-entscheidung}{test-label}
+            \begin{dialog}{Polizist}
+                Leider haben Sie die falsche option bei Entscheidung~\ref{erste-entscheidung} gewählt.
+                Wie wär's mit~\ref{#1} oder mit~\ref{test-label}?
+            \end{dialog}
+        \end{conditional}
+    \end{scene}
+
+    \begin{enumerate}
+        \item First item
+        \item \label{itm:bla-blub} Second item
+    \end{enumerate}
+
+    Hier reference~\ref{itm:bla-blub}
+
+\end{document}
