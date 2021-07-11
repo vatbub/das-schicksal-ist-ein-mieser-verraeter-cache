@@ -21,6 +21,7 @@
 \usepackage{enumerate}
 \usepackage[shortlabels]{enumitem}
 \usepackage{titlesec}
+\usepackage{calc}
 
 % For title slug
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
@@ -89,23 +90,59 @@
 }
 
 % Decision elements
+\newlist{optionlist}{enumerate}{3}
+\setlist[optionlist]{
+    font=\bfseries,
+    align=left
+}
+\setlist[optionlist, 1]{
+    label=Option \arabic*:,
+    ref=\arabic*
+}
+\setlist[optionlist, 2]{
+    label=Option \theoptionlisti.\arabic*:,
+    ref=\theoptionlisti.\arabic*
+}
+\setlist[optionlist, 3]{
+    label=Option \theoptionlisti.\theoptionlistii.\arabic*:,
+    ref=\theoptionlisti.\theoptionlistii.\arabic*
+}
+
+\newcounter{DecisionEnvironmentDepth}
+\setcounter{DecisionEnvironmentDepth}{0}
 \newcounter{decision}
 \newenvironment{decision}[2]{
     \refstepcounter{decision}
+    \addtocounter{DecisionEnvironmentDepth}{1}% increment depth
+    \expandafter\newcommand\csname DecisionLabel\the\value{DecisionEnvironmentDepth} \endcsname{#1}
     \label{#1}
     \par\textbf{Entscheidung~\thedecision:}~#2
-    \begin{enumerate}[label={Option \arabic*:}, font=\bfseries]
+    \begin{optionlist}
     }{
-    \end{enumerate}
+    \end{optionlist}
+    \addtocounter{DecisionEnvironmentDepth}{-1}% decrement depth
 }
 
-\newcommand{\itemNumber}{\number\numexpr\value{enumi}\relax}
-\newenvironment{option}[2]{\item #2 \label{#1}}{\textit{(Ende von Entscheidung \thedecision~Option \itemNumber)}}
+\newlength{\enumerateIndent}
+\setlength{\enumerateIndent}{-1cm}
+\newcounter{OptionEnvironmentDepth}
+\setcounter{OptionEnvironmentDepth}{0}
+\newcommand{\currentOptionLabel}{}
+\newenvironment{option}[2]{
+    \renewcommand{\currentOptionLabel}{#1}
+    \addtocounter{OptionEnvironmentDepth}{1}% increment depth
+    \item \label{#1} #2
+    \begin{adjustwidth}{\enumerateIndent}{0cm*\value{OptionEnvironmentDepth}}
+    }{
+    \end{adjustwidth}
+    \textit{(Ende von Entscheidung~\ref{\csname DecisionLabel\the\value{DecisionEnvironmentDepth} \endcsname},~Option~\ref{\currentOptionLabel})}
+    \addtocounter{OptionEnvironmentDepth}{-1}% decrement depth
+}
 
 \newcounter{conditional}
 \newenvironment{conditional}[2]{
     \refstepcounter{conditional}
-    \textbf{Bedingung \theconditional:} Wenn Entscheidung~\ref{#1},~\ref{#2}:
+    \textbf{Bedingung \theconditional:} Wenn Entscheidung~\ref{#1}, Option~\ref{#2}:
         }{
     \textit{(Ende von Bedingung \theconditional.)}
 }
@@ -194,13 +231,22 @@
         \actionline{Emma spielt mit ihren Händen (Beat).}
 
         \begin{dialog}{Emma}
-            Wen ich Ihnen das sage, wird er Sie töten.
+            Wenn ich Ihnen das sage, wird er Sie töten.
+        \end{dialog}
+
+        \begin{dialog}{Polizist}
+            Hier sage ich etwas sehr langes, damit der Zeilenumbruch im Dialog sichtbar wird.
+            Das ist echt schwierig, denn es soll ja einen Inhalt haben, aber gleichzeitig bin ich sehr unkreativ.
+            Technische Dinge eben.
+            Vieleicht sollte ich eher einen Lorem Ipsum Text kopieren.
         \end{dialog}
 
         \begin{decision}{erste-entscheidung}{Eine Beispielentscheidung}
             \begin{option}{test-label}{Test}
                 \begin{dialog}{Emma}
                     Hier spreche ich eine Option.
+                    Die Option ist sehr lange, weil auch ich einen Zeilenumbruch testen soll.
+                    Haha, wie einfach.
                 \end{dialog}
             \end{option}
             \begin{option}{test-label-other}{Eine weitere Option}
@@ -235,12 +281,20 @@
         \begin{scenedescription}
             In dieser Szene geht es um die Darstellung verschachtelter Entscheidungen.
         \end{scenedescription}
+
+        \begin{dialog}{Emma}
+            Auch hier sage ich zunächst etwas sehr langes, um die Umbrüche und die Einrückung zu testen.
+            Viel Spaß beim Lesen!
+        \end{dialog}
+
         \begin{decision}{obere-ebene-verschachtelte-entscheidung}{Eine verschachtelte Entscheidung -- obere Ebene}
             \begin{option}{nested-option-1}{Erste Option}
                 \begin{decision}{erste-innere-entscheidung}{Hier die erste verschachtelte Option - innen}
                     \begin{option}{innen-entscheidung-1-option1}{Innen ENtscheidung 1, Option 1}
                         \begin{dialog}{Emma}
                             Innere Entscheidung, hier ist die erste Option.
+                            Der Text ist hier absichtlich lang, da jede Option aktuell weiter eingerückt ist, als die vorherige.
+                            Das sollte so nicht sein, Dialog sollte immer die gleiche Einrückung haben.
                         \end{dialog}
                     \end{option}
                     \begin{option}{innen-entscheidung-1-option2}{Eine weitere innere Option}
