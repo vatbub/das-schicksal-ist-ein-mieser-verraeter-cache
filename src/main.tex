@@ -20,9 +20,14 @@
 \usepackage{array}
 \usepackage{enumerate}
 \usepackage[shortlabels]{enumitem}
+\usepackage{titlesec}
 
 % For title slug
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+% Section header formatting
+%! suppress = MissingLabel
+\titleformat{\section}{}{}{0em}{\MakeUppercase}
 
 \makeglossaries
 
@@ -61,7 +66,7 @@
     \textbf{\uppercase{#1}}
 
 
-    \section{\uppercase{#2 #3 -- #4}}\label{sec:scene-#3}
+    \section{#2 #3 -- #4}\label{sec:scene-#3}
     }{}
 \newenvironment{scenedescription}{%
     \begin{flushleft}
