@@ -20,19 +20,12 @@ val processedTerms = lines
 val processedSingularLines = processedTerms
     .map { "::$it::\\gls{{}$it{}}" }
 
-val processedPluralLines = processedTerms
-    .map { "::${it}s::\\glspl{{}$it{}}" }
-
 PrintStream(outputFile).use { outputWriter ->
     outputWriter.println("#NoEnv")
     outputWriter.println("SendMode Input")
     outputWriter.println("#SingleInstance, force")
 
     processedSingularLines.forEach { line ->
-        outputWriter.println(line)
-    }
-
-    processedPluralLines.forEach { line ->
         outputWriter.println(line)
     }
 }
