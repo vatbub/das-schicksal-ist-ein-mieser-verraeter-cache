@@ -65,6 +65,10 @@ When your list of characters changed, just run the Kotlin script again and it wi
 Simply compile `main.tex` with pdflatex as you would do with any other LaTeX document.
 You may also upload your screenplay to [Overleaf.com](https://www.overleaf.com/) which renders your screenplay as you type.
 
+## Translating the template into another language
+I designed this template such that it's fairly easy to translate it to another language.
+Since my screenplay is in German, I have all the keywords in German, but if you open `translation-german.tex`, you can replace the translations as you wish.
+
 ## License
 The LaTeX template is published under the Apache license v2. This includes:
 - All files in this repository except for some portions of `main.tex`
