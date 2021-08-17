@@ -1,5 +1,11 @@
 #NoEnv
 SendMode Input
 #SingleInstance, force
-::Emma::\gls{{}Emma{}}
-::Polizist::\gls{{}Polizist{}}
+::Hazel::\gls{{}Hazel{}}
+::Augustus::\gls{{}Augustus{}}
+::Hazels Mutter::\gls{{}Hazels Mutter{}}
+::Dr. Jim::\gls{{}Dr. Jim{}}
+::Patrick::\gls{{}Patrick{}}
+::Isaac::\gls{{}Isaac{}}
+::Michael::\gls{{}Michael{}}
+::Monica::\gls{{}Monica{}}
