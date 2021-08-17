@@ -69,18 +69,31 @@
     \end{flushleft}
 }
 
-\newcommand{\actionline}[1]{#1}
+\newcommand{\standaloneactionline}[1]{#1}
+\newcommand{\actionline}[1]{\standaloneactionline{#1}}
+\newcommand{\dialogactionline}[2]{
+    \end{flushleft}
+    \end{adjustwidth}
+    #1
+    \begin{adjustwidth}{6.5cm}{0cm}
+        \uppercase{#2}~(Continued)
+    \end{adjustwidth}
+    \begin{adjustwidth}{2.5cm}{0cm}
+        \begin{flushleft}
+}
 
 % Dialog elements
 \NewDocumentEnvironment{dialog} { o m } {
     \begin{adjustwidth}{6.5cm}{0cm}
         \uppercase{#2}\IfValueT{#1}{\uppercase{~(#1)}}
     \end{adjustwidth}
+    \renewcommand{\actionline}[1]{\dialogactionline{##1}{#2}}
     \begin{adjustwidth}{2.5cm}{0cm}
         \begin{flushleft}
         }{
         \end{flushleft}
     \end{adjustwidth}
+\renewcommand{\actionline}[1]{\standaloneactionline{#1}}
 }
 
 % Decision elements
