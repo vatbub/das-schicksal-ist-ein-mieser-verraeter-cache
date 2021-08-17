@@ -1,3 +1,4 @@
+%! suppress = Ellipsis
 % Preamble
 \documentclass[12pt]{article}
 
@@ -24,30 +25,231 @@
     \input{beginningOfDocument.tex}
 
 
-    \begin{scene}[fade in]{innen}{Verhör}{Tageszeit unbekannt}
-        \begin{scenedescription}
-            \gls{Emma}, eine 40 Jahre alte Frau mit faltigem Gesicht sitzt an einem Tisch.
-            Ihr gegenüber sitzt ein \gls{Polizist}, auf dem Tisch stehen zwei Mikrofone, eines zeigt zum \gls{Polizist}en, eines zu Emma.
-            Das Licht fällt so, dass der Tisch gut sichtbar und die Gesichter der Personen gerade so sichtbar sind.
-            Der Rest des Raumes ist schwarz.
-        \end{scenedescription}
+    \begin{scene}[fade in]{innen}{Prolog}{Tagsüber}
+        \begin{dialog}[V.O.]{Hazel}
+            Depression ist eine Nebenwirkung von Krebs.
+            So steht es zumindest in jeder Krebs-Broschüre oder auf jeder Website im Internet.
+            In Wirklichkeit sind Depressionen aber eine Nebenwirkung des Sterbens.
+            Krebs ist auch eine Nebenwirkung des Sterbens.
 
-        \begin{dialog}{Polizist}
-            Sie wissen, warum Sie hier sind?
-        \end{dialog}
+            \pause
 
-        \actionline{\gls{Emma} schweigt.}
-
-        \begin{dialog}[Fortsetzung]{Polizist}
-            Sie müssen mir nichts sagen, aber wenn Sie schweigen, werden wir Sie bis auf Weiteres festnehmen müssen.
+            Meine Mutter war der festen Überzeugung, dass ich eine Therapie brauchte, denn ich saß die ganze Zeit in
+            meinem Zimmer, verließ kaum das Haus, las immer wieder das selbe Buch, aß wenig und verbrachte den großen
+            Teil meiner reichlichen Zeit, um über den Tod nachzudenken.
+            So gingen wir zu \gls{Dr. Jim}, der meiner Mutter bestätigte, dass ich bis zum Hals in einer lähmenden und absolut
+            klinischen Depression steckte und dass meine Medikamente neu eingestellt werden müssten und ich außerdem
+            einmal die Woche eine Selbsthilfegruppe besuchen sollte.
         \end{dialog}
     \end{scene}
 
-    \begin{scene}{aussen}{Flashback}{tagsüber}
+    \begin{scene}[cut to]{innen}{Selbsthilfegruppe 1}{Nachmittag}
         \begin{scenedescription}
-            \gls{Emma} liegt auf dem Boden und wird von einer anderen Person erwürgt.
-            \gls{Emma} schreit und versucht, sich aus dem Würgegriff zu befreien, in ihrem Blick ist die Angst vor dem Tod deutlich zu sehen.
+            Eine Gruppe Jugendlicher sitzt in einem Stuhlkreis in einem Kellerraum einer Kirche, unter ihnen ein älterer Betreuer, \gls{Patrick}.
+            In der Mitte des Stuhlkreises ist ein Teppich ausgerollt, auf dem eine Abbildung Jesu-Christi zu sehen ist.
+            Auf der Abbildung ist sein Herz deutlich zu sehen.
+            Unter den Jugendlichen sitzen:
+
+            \gls{Hazel}.
+            Sie hat Lungenkrebs und zieht daher ständig eine Sauerstoffflasche hinter sich her.
+
+            \gls{Isaac}.
+            Er hat Augenkrebs, weswegen bei ihm ein Auge durch ein Glasauge ersetzt wurde.
+
+            \gls{Augustus}.
+            Er hatte Knochenkrebs.
+            Im Rahmen seiner Behandlung wurde ihm sein rechtes Bein amputiert, weshalb er dort eine Prothese trägt.
+
+            Die Stimmung ist sehr deprimierend, weswegen jeder nur nach explizitem Aufruf von \gls{Patrick} spricht, ansonsten ist es still.
         \end{scenedescription}
+
+        \actionline{\gls{Augustus} starrt die ganze Zeit \gls{Hazel} an.}
+
+        \begin{dialog}[betend]{Patrick}
+            Gott, gib mir die Gelassenheit, die Dinge hinzunehmen, die ich nicht ändern kann, den Mut, die Dinge zu ändern,
+            die ich ändern kann, und die Weisheit, das eine vom anderen zu unterscheiden.
+        \end{dialog}
+
+        \begin{dialog}[Normal]{Patrick}
+            Nun, wir sind alle hier, buchstäblich im Herzen Jesu, weil jeder von uns eine Krebsgeschichte hat.
+            Ich zum Beispiel hatte als Kind Hodenkrebs.
+            Meine Eltern und meine Ärzte dachten, ich würde von ihnen gehen.
+
+            Aber Gott hat mich gerettet und so bin ich nun hier, beu euch.
+            Und jetzt bin ich hier, als erwachsener Mann, um euch zu helfen.
+
+            Wir haben ein paar neue Gesichter hier, vielleicht stellt ihr euch alle mal vor.
+            Isaac, vielleicht möchtest du heute anfangen.
+            Ich weiß, dass dir in der kommenden Woche eine große Herausforderung bevorsteht.
+        \end{dialog}
+
+        \begin{dialog}{Isaac}
+            Ok. \direction{Räuspert sich}
+
+            Ich heiße \gls{Isaac}.
+            Ich bin siebzehn.
+            Ich habe Augenkrebs.
+            Mir wurde ja schon ein Auge entfernt, aber am Montag werde ich wieder operiert und das zweite Auge herausgenommen.
+            Danach bin ich blind, das ist klar.
+            Ich will mich auch nicht beschweren oder so, denn viele von euch hat es ja viel schlimmer erwischt.
+            Aber, na ja, blind werden ist auch irgendwie scheiße.
+            Zum Glück habe ich aber eine verdammt heiße Freundin, \gls{Monica}.
+            Weiß auch nicht, wie ich die verdient habe.
+
+            Und ich habe tolle Freunde, wie \gls{Augustus} Waters, die mir beistehen.
+
+            \actionline{\gls{Isaac} nickt \gls{Augustus} zu, der neben ihm sitzt.}
+
+            Tja, so sieht's aus.
+            Danke.
+        \end{dialog}
+
+        \begin{dialog}{Patrick}
+            Wir sind für dich da, \gls{Isaac}.
+            Sagen wir es ihm, Leute.
+        \end{dialog}
+
+        \begin{dialog}{Alle im Chor}
+            Wir sind für dich da \gls{Isaac}.
+        \end{dialog}
+
+        \begin{dialog}{Patrick}
+            Hazel, wie sieht es mit dir aus?
+        \end{dialog}
+
+        \begin{dialog}{Hazel}
+            Oh, äh, ... Ich heiße Hazel.
+            Ich bin sechzehn.
+            Ursprünglich hatte ich Schilddrüsenkrebs, Stadium IV, aber mit umfänglichen und hartnäckigen Metastasen in der Lunge.
+        \end{dialog}
+
+        \begin{dialog}{Patrick}
+            Und, äh, wie geht es dir heute?
+        \end{dialog}
+
+        \begin{dialog}[In Gedanken]{Hazel}
+            Du meinst abgesehen von meinem tödlichen Krebs?
+        \end{dialog}
+
+        \begin{dialog}{Hazel}
+            Ganz gut.
+        \end{dialog}
+
+        \begin{dialog}{Augustus}
+            Nun noch der neue in der Runde, Augustus heißt du, richtig?
+        \end{dialog}
+
+        \begin{dialog}{Augustus}
+            Ja genau, ich heiße Augustus.
+            Augustus Waters.
+            Ich bin siebzehn.
+            Vor anderthalb Jahren hatte ich den leichten Anflug eines Osteosarkoms, also Knochenkrebs.
+            Daher habe ich auch diese Beinprothese...
+
+            \actionline{\gls{Augustus} krempelt sein Hosenbein hoch, sodass seine Prothese zu sehen ist.}
+
+            So kann man ganz einfach ein paar Kilo abnehmen!
+
+            Aber heute bin ich hier, weil \gls{Isaac} mich darum gebeten hat.
+        \end{dialog}
+
+        \begin{dialog}{Patrick}
+            Und wie geht's dir, Gus?
+        \end{dialog}
+
+        \begin{dialog}{Augustus}
+            Prächtig, prächtig.
+            Meine Achterbahn geht nur nach oben!
+        \end{dialog}
+
+        \begin{dialog}[IN Gedanken]{Hazel}
+            Warum starrt mich Augustus die ganze Zeit an?
+            Ich meine, er ist ziemlich süß, aber warum ich?
+            Es gibt doch so viele schöne Mädchen in der Welt!
+        \end{dialog}
+
+        \begin{dialog}{Patrick}
+            \gls{Augustus}, vielleicht möchtest du der Gruppe von deinen Ängsten erzählen?
+        \end{dialog}
+
+        \begin{dialog}{Augustus}
+            Meine Ängste?
+            Ich habe Angst vor dem Vergessen.
+            Ich fürchte das Vergessen wie der sprichwörtliche Blinde, der die Dunkelheit fürchtet.
+        \end{dialog}
+
+        \begin{decision}{selbsthilfegruppe-hazel-meldet-sich}{\gls{Hazel} spricht über das Vergessen}
+            \begin{option}{selbsthilfegruppe-sich-melden}{\gls{Hazel} meldet sich.}
+                \actionline{\gls{Hazel} hebt die Hand.}
+
+                \begin{dialog}{Patrick}
+                    Oh, \gls{Hazel}, das kommt aber überraschend!
+                \end{dialog}
+
+                \begin{dialog}{Hazel}
+                    Augustus, es kommt eine Zeit, da wir alle tot sind.
+                    Wir alle.
+                    Es kommt die Zeit, da es keine Menschen mehr gibt, die sich erinnern können, dass je irgendwer von uns existiert hat oder dass unsere Spezies je etwas geleistet hat.
+                    Dann ist keiner mehr da, der sich an Aristoteles oder Kleopatra erinnert und erst recht nicht an dich.
+                    Alles, was wir getan oder gebaut, geschrieben, gedacht oder entdeckt haben, alles wird vergessen sein, und all das hier...
+
+                    \actionline{\gls{Hazel} macht eine allumfassende Geste.}
+
+                    ...hat keine Bedeutung mehr.
+                    Vielleicht kommt diese Zeit bald, vielleicht erst in Millionen von Jahren, aber selbst, wenn wir den Kollaps unserer Sonne überleben sollten, überleben wir nicht für immer.
+                    Es gab eine Zeit, bevor die Organismen zu Bewusstsein kamen, und es wird eine Zeit danach geben.
+                    Und wenn es die Unausweichlichkeit des menschlichen Vergessens ist, die dir Angst macht, dann rate ich dir eins: ignorier‘ sie einfach.
+                    Das ist, weiß Gott, was alle anderen machen.
+                \end{dialog}
+
+                \actionline{Es entsteht eine kurze Pause, \gls{Augustus} lächelt \gls{Hazel} an.}
+
+                \begin{dialog}{Patrick}
+                    Hazel, das, was du gesagt hast, ist echt gut, du solltest dich öfters melden!
+
+                    Lasst uns daraufhin beten!
+                \end{dialog}
+            \end{option}
+            \begin{option}{selbsthilfegruppe-sich-nicht-melden}{\gls{Hazel} meldet sich nicht.}
+                \actionline{Es entsteht eine kurze Pause.}
+
+                \begin{dialog}{Patrick}
+                    Nun, ich bin kein Pfarrer, aber ich glaube, dass wir nie vergessen werden.
+                    Gott wird uns ewig an Vergangenes erinnern, selbst wenn wir es vergessen.
+                    Ich würde dir daher empfehlen, deine Angst einfach zu ignorieren.
+
+                    Lasst uns dafür nochmal beten.
+                \end{dialog}
+            \end{option}
+        \end{decision}
+
+        \begin{dialog}[betend]{Patrick}
+            Herr Jesus Christus, als Krebspatienten haben wir uns hier in deinem Herzen versammelt, deinem buchstäblichen Herzen.
+            Du, und du allein, kennst uns, wie wir uns selbst kennen.
+            Führe uns durch die Zeiten der Prüfungen zum Leben und zum Licht.
+            Wir beten für Isaacs Augen, für Michaels und Jamies Blut, für Augustus‘ Knochen, für Hazels Lunge und für James‘ Luftröhre.
+            Wir beten, dass du uns heilen mögest und dass wir deine Liebe spüren und deinen Frieden, der über jedes Verständnis hinausgeht.
+            Und wir erinnern uns im Herzen an die, die wir kannten und liebhatten und die heim zu dir gegangen sind: Maria und Kade und Joseph und Haley und Abigail und Angelina und Taylor und Gabriel...
+        \end{dialog}
+
+        \begin{dialog}[In Gedanken]{Hazel}
+            Oh Gott, das ist eine lange Liste.
+            Auf der Welt gibt es eine Menge Tote.
+            Eines Tages werde ich auch auf der Liste landen.
+            Ganz am Ende, wenn keiner mehr zuhört.
+        \end{dialog}
+
+        \begin{dialog}{Patrick}
+            Ok, Leute, jetzt noch unser Mantra:
+        \end{dialog}
+
+        \begin{dialog}{Alle im Chor}
+            Unser bestes Leben heute Leben.
+        \end{dialog}
+
+        \begin{dialog}{Patrick}
+            Ok, dann sehen wir uns nächste Woche!
+        \end{dialog}
     \end{scene}
 
     \begin{scene}{innen}{Verhör (Fortsetzung)}{Tageszeit unbekannt}
