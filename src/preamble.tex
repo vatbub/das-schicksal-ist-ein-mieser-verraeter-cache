@@ -123,12 +123,12 @@
 \newcounter{DecisionEnvironmentDepth}
 \setcounter{DecisionEnvironmentDepth}{0}
 \newcounter{decision}
-\newenvironment{decision}[2]{
+\newenvironment{decision}[3]{
     \refstepcounter{decision}
     \addtocounter{DecisionEnvironmentDepth}{1}% increment depth
     \expandafter\newcommand\csname DecisionLabel\the\value{DecisionEnvironmentDepth} \endcsname{#1}
     \label{#1}
-    \par\textbf{\translationDecisionLabel~\thedecision:}~#2
+    \par\textbf{\translationDecisionLabel~\thedecision:}~#2 (#3~\translationDecisionPrincipalSuffix)
     \begin{optionlist}
     }{
     \end{optionlist}

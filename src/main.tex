@@ -75,11 +75,11 @@
             Ich zum Beispiel hatte als Kind Hodenkrebs.
             Meine Eltern und meine Ärzte dachten, ich würde von ihnen gehen.
 
-            Aber Gott hat mich gerettet und so bin ich nun hier, beu euch.
-            Und jetzt bin ich hier, als erwachsener Mann, um euch zu helfen.
+            Aber Gott hat mich gerettet und so bin ich nun hier, bei euch.
+            Um euch zu helfen.
 
             Wir haben ein paar neue Gesichter hier, vielleicht stellt ihr euch alle mal vor.
-            Isaac, vielleicht möchtest du heute anfangen.
+            Isaac, möchtest du heute anfangen?
             Ich weiß, dass dir in der kommenden Woche eine große Herausforderung bevorsteht.
         \end{dialog}
 
@@ -89,7 +89,7 @@
             Ich heiße \gls{Isaac}.
             Ich bin siebzehn.
             Ich habe Augenkrebs.
-            Mir wurde ja schon ein Auge entfernt, aber am Montag werde ich wieder operiert und das zweite Auge herausgenommen.
+            Mir wurde ja schon ein Auge entfernt, aber am Montag werde ich wieder operiert und das zweite Auge wird herausgenommen.
             Danach bin ich blind, das ist klar.
             Ich will mich auch nicht beschweren oder so, denn viele von euch hat es ja viel schlimmer erwischt.
             Aber, na ja, blind werden ist auch irgendwie scheiße.
@@ -131,9 +131,58 @@
             Du meinst abgesehen von meinem tödlichen Krebs?
         \end{dialog}
 
-        \begin{dialog}{Hazel}
-            Ganz gut.
-        \end{dialog}
+        \begin{decision}{wie-geht-es-hazel}{Wie geht es \gls{Hazel}?}{\gls{Hazel}}
+            \begin{option}{hazel-geht-es-gut}{Ganz gut.}
+                \begin{dialog}{Hazel}
+                    Ganz gut.
+                \end{dialog}
+            \end{option}
+            \begin{option}{hazel-geht-es-nicht-gut}{Naja, ich habe halt Krebs.}
+                \begin{dialog}{Hazel}
+                    Naja, wie es einem halt so geht, wenn man Krebs hat.
+                \end{dialog}
+            \end{option}
+            \begin{option}{hazel-geht-es-schlecht}{Schlecht.}
+                \begin{dialog}{Hazel}
+                    Ganz ehrlich: Nicht gut.
+                    Aber das brauche ich hier, glaube ich, keinem zu erzählen.
+                \end{dialog}
+
+                \begin{decision}{patrick-bittet-hazel-über-ihre-gefühle-zu-erzählen}{\gls{Patrick} bittet \gls{Hazel} über ihre Gefühle zu erzählen.}{\gls{Patrick}}
+                    \begin{option}{patrick-lässt-hazel-erzählen}{Oh doch, erzähl.}
+                        \begin{dialog}{Patrick}
+                            Oh doch, erzähl.
+                            Dafür sind wir hier!
+                        \end{dialog}
+
+                        \begin{dialog}{Hazel}
+                            Es ist wie eine Behinderung.
+                            Immer muss ich diese Flasche mitschleppen.
+                            Ich kann keine längere Strecke gehen, ohne wie Darth Vader zu atmen und wenn ich eine Treppe hochgehe, muss ich mich erstmal 5 Minuten ausruhen.
+                            Aber immer, wenn ich mich darüber beschwere und hier andere sehe, wie \gls{Isaac}, der bald sein Augenlicht verliert, dann habe ich irgendwie das Gefühl, dass ich noch halbwegs glücklich sein kann.
+                        \end{dialog}
+
+                        \begin{dialog}{Patrick}
+                            \gls{Hazel}, wir sind für dich da!
+                        \end{dialog}
+
+                        \begin{dialog}{Alle im Chor}
+                            Wir sind für dich da \gls{Hazel}.
+                        \end{dialog}
+                    \end{option}
+
+                    \begin{option}{patrick-lässt-hazel-nicht-erzählen}{Wir sind für dich da, \gls{Hazel}.}
+                        \begin{dialog}{Patrick}
+                            \gls{Hazel}, wir sind für dich da!
+                        \end{dialog}
+
+                        \begin{dialog}{Alle im Chor}
+                            Wir sind für dich da \gls{Hazel}.
+                        \end{dialog}
+                    \end{option}
+                \end{decision}
+            \end{option}
+        \end{decision}
 
         \begin{dialog}{Augustus}
             Nun noch der neue in der Runde, Augustus heißt du, richtig?
@@ -178,7 +227,7 @@
             Ich fürchte das Vergessen wie der sprichwörtliche Blinde, der die Dunkelheit fürchtet.
         \end{dialog}
 
-        \begin{decision}{selbsthilfegruppe-hazel-meldet-sich}{\gls{Hazel} spricht über das Vergessen}
+        \begin{decision}{selbsthilfegruppe-hazel-meldet-sich}{\gls{Hazel} spricht über das Vergessen}{\gls{Hazel}}
             \begin{option}{selbsthilfegruppe-sich-melden}{\gls{Hazel} meldet sich.}
                 \actionline{\gls{Hazel} hebt die Hand.}
 
@@ -275,7 +324,7 @@
             Vielleicht sollte ich eher einen Lorem Ipsum Text kopieren.
         \end{dialog}
 
-        \begin{decision}{erste-entscheidung}{Eine Beispielentscheidung}
+        \begin{decision}{erste-entscheidung}{Eine Beispielentscheidung}{Emma}
             \begin{option}{test-label}{Test}
                 \begin{dialog}{Emma}
                     Hier spreche ich eine Option.
@@ -290,7 +339,7 @@
             \end{option}
         \end{decision}
 
-        \begin{decision}{zweite-entscheidung}{Eine weitere Beispielentscheidung}
+        \begin{decision}{zweite-entscheidung}{Eine weitere Beispielentscheidung}{Polizist}
             \begin{option}{more-test-label}{Test}
                 \begin{dialog}{Emma}
                     Nächste Entscheidung, hier ist die erste Option.
@@ -321,9 +370,9 @@
             Viel Spaß beim Lesen!
         \end{dialog}
 
-        \begin{decision}{obere-ebene-verschachtelte-entscheidung}{Eine verschachtelte Entscheidung -- obere Ebene}
+        \begin{decision}{obere-ebene-verschachtelte-entscheidung}{Eine verschachtelte Entscheidung -- obere Ebene}{Emma}
             \begin{option}{nested-option-1}{Erste Option}
-                \begin{decision}{erste-innere-entscheidung}{Hier die erste verschachtelte Option - innen}
+                \begin{decision}{erste-innere-entscheidung}{Hier die erste verschachtelte Option - innen}{Polizist}
                     \begin{option}{innen-entscheidung-1-option1}{Innen ENtscheidung 1, Option 1}
                         \begin{dialog}{Emma}
                             Innere Entscheidung, hier ist die erste Option.
@@ -339,7 +388,7 @@
                 \end{decision}
             \end{option}
             \begin{option}{nested-option-2}{Eine weitere äußere Option}
-                \begin{decision}{zweite-innere-entscheidung}{Hier die zweite verschachtelte Option - innen}
+                \begin{decision}{zweite-innere-entscheidung}{Hier die zweite verschachtelte Option - innen}{Polizist}
                     \begin{option}{innen-entscheidung-2-option1}{Innen ENtscheidung 2, Option 1}
                         \begin{dialog}{Emma}
                             Zweite innere Entscheidung, hier ist die erste Option.
