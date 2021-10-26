@@ -307,7 +307,7 @@
             In dem Park hat der Künstler Joep van Lieshout sein Kunstwerk "Funky bones" ausgestellt.
             Das Kunstwerk besteht aus 20 Sitzbänken ohne Lehne, welche in Form eines menschlichen Skeletts angeordnet und auch entsprechend bemalt sind.
             \gls{Hazel} und \gls{Augustus} betreten den Park über einen Kiesweg.
-            \gls{Augustus} hat einen Picknick-Korb in der Hand, in dem Tomaten-Käse-Sandwiches sind.
+            \gls{Augustus} in der einen Hand Einen Tulpenstrauß und in der anderen einen Picknick-Korb, in dem Tomaten-Käse-Sandwiches sind.
         \end{scenedescription}
 
         \begin{dialog}{Hazel}
@@ -357,7 +357,7 @@
             Naja.
         \end{dialog}
 
-        \actionline{\gls{Augustus} und \gls{Hazel} gehen weiter in richtung von Funky bones.}
+        \actionline{\gls{Augustus} und \gls{Hazel} gehen weiter in Richtung von Funky bones.}
 
         \begin{dialog}{Augustus}
             Funky bones, von Joep van Lieshout.
@@ -368,7 +368,131 @@
         \end{dialog}
 
         \begin{dialog}{Augustus}
-            Und das ist er auch, genau so wie Rick Smith und Tulpen.
+            Und das ist er auch, genau so wie Rik Smits und Tulpen.
+        \end{dialog}
+
+        \actionline{\gls{Augustus} und \gls{Hazel} bleiben stehen. Augustus holt aus dem Picknick-Korb eine Picknick-Decke und breitet diese aus.
+        Beide setzen sich auf die Decke und \gls{Augustus} holt die Sandwiches aus dem Korb.}
+
+        \begin{decision}{hazel-fragt-nach-orange}{\gls{Hazel} fragt nach der Tulpenfarbe.}{Hazel}
+            \begin{option}{hazel-fragt-nach-tulpenfarbe}{Warum denn orangene Tulpen?}
+                \begin{dialog}{Hazel}
+                    Wozu das ganze Orange?
+                \end{dialog}
+
+                \begin{dialog}{Augustus}
+                    Die holländische Nationalfarbe, ist doch klar?
+                \end{dialog}
+            \end{option}
+
+            \begin{option}{hazel-fragt-nicht-nach-tulpenfarbe}{Schweigen.}
+                \actionline{\gls{Hazel} schweigt.}
+            \end{option}
+        \end{decision}
+
+        \actionline{\gls{Augustus} hält \gls{Hazel} einen Sandwich hin.}
+
+        \begin{dialog}{Augustus}
+            Sandwich?
+        \end{dialog}
+
+        \begin{decision}{hazels-antwort-ob-sie-einen-sandwich-will}{\gls{Hazel}s Reaktion auf den Sandwich}{Hazel}
+            \begin{option}{hazel-nimmt-den-sandwich-an}{Ja, gerne!}
+                \begin{dialog}{Hazel}
+                    Ja, gerne!
+                \end{dialog}
+            \end{option}
+
+            \begin{option}{hazel-rfragt-ob-sandwiches-hollaendisch-sind}{Auch holländisch?}
+                \begin{dialog}{Hazel}
+                    Lass mich raten: Auch holländisch?
+                \end{dialog}
+            \end{option}
+        \end{decision}
+
+        \begin{dialog}{Augutus}
+            Holländischer Käse mit Tomaten. Die Tomaten sind aber aus Mexiko. Tut mir Leid.
+        \end{dialog}
+        
+        \actionline{\gls{Hazel} lacht etwas.}
+
+        \begin{decision}{soll-hazel-einen-witz-ueber-tomaten-machen}{Witz über Tomaten}{Hazel}
+            \begin{option}{einen-witz-ueber-tomaten-machen}{Wie wär's mit orangenen Tomaten?}
+                \begin{dialog}{Hazel}
+                    Hättest du nicht wenigstens orangene Tomaten besorgen können?
+                \end{dialog}
+
+                \actionline{\gls{Augustus} lacht und beide essen ihre Sandwiches weiter.}
+            \end{option}
+
+            \begin{option}{keinen-witz-machen}{Nichts sagen.}
+                \actionline{\gls{Hazel} isst ihren Sandwich weiter.}
+            \end{option}
+        \end{decision}
+
+        \actionline{\gls{Augustus} nimmt seine Zigarettenschachtel aus der Jackentasche, zieht sich daraus eine Zigarette heraus und steckt sie sich (unangezündet) zwischen die Lippen.}
+
+        \begin{dialog}{Hazel}[In Gedanken]
+            Ich frage mich echt, was Augustus mit all den holländischen Sachen machen will...
+        \end{dialog}
+        
+        \actionline{Etwas von den beiden entfernt spielen einige Kinder und springen von Knochen zu Knochen.}
+        
+        \begin{dialog}{Augustus}
+            Zwei Sachen, die ich an dieser Skulptur liebe:
+            
+            \actionline{Augustus nimmt die Zigarette zwischen die Finger und schnippt damit, als wollte er die Asche abklopfen. Dann steckt er sie sich wieder in den Mund.}
+
+            Erstens sind die Knochen haargenau so weit voneinander entfernt, dass jedes Kind den unwiderstehlichen Drang verspürt, zwischen ihnen hin und her zu springen.
+            Man muss einfach vom Brustkorb zum Schädel hüpfen und wieder zurück.
+            Was bedeutet, das, zweitens, die Skulptur im Grunde Kinder dazu zwingt, auf Knochen zu spielen.
+            Die symbolischen Deutungsmöglichkeiten sind unendlich, Hazel Grace.
+        \end{dialog}
+
+        % TODO: Mehrere Möglichkeiten geben, wie Hazel das Gespräch wieder auf Holland lenkt
+        \begin{dialog}{Hazel}
+            Du hast echt eine Schwäche für Symbole, was?
+        \end{dialog}
+
+        \begin{dialog}{Augustus}
+            Stimmt.
+            Wahrscheinlich fragst du dich zum Beispiel, warum du ein mieses Käsesandwich isst und Orangensaft trinkst und warum ich das Trikot eines Niederländers trage, der mal einen Sport gespielt hat, den ich zu hassen gelernt habe.
+        \end{dialog}
+
+        \begin{dialog}{Hazel}
+            Tja, Fragen über Fragen...
+        \end{dialog}
+
+        \begin{dialog}{Augustus}
+            Hazel Grace.
+            Wie so viele Kinder vor dir - und das sage ich mit großer Zuneigung - hast du deinen Herzenswunsch vergeudet, ohne dir Gedanken über die Konsequenzen zu machen.
+            Du hast dem Sensenmann ins Auge gesehen und die Angst, mit dem Wunsch in der sprichwörtlichen Tasche zu sterben, hat dich dazu verleitet, den ersten Wunsch zu äußern, der dir in den Sinn kam, und so hast du dich, wie viele andere vor und nach dir, für die kalten und künstlichen Freuden eines Freizeitparks entschieden.
+        \end{dialog}
+
+        \begin{dialog}{Hazel}
+            Hey, das hat ziemlich Spaß gemacht!
+            Ich habe Goofy kennengelernt und Minnie...
+        \end{dialog}
+
+        \begin{dialog}{Augustus}
+            Ich bin mitten in einem bedeutenden Monolog!
+            Du kannst mich da nicht einfach unterbrechen!
+
+            Okay.
+            Wo waren wir stehengeblieben?
+        \end{dialog}
+
+        \begin{dialog}{Hazel}
+            Die künstlichen Freuden.
+        \end{dialog}
+
+        \actionline{\gls{Augustus} schiebt seine Zigarette zurück in das Päckchen.}
+
+        \begin{dialog}{Augustus}
+            Richtig.
+            Die kalten und künstlichen Freuden eines Freizeitparks.
+            Doch lass mich dir sagen, dass die wahren Helden der Wunschfabrik die jungen Männer und Frauen sind, die warten können wie alte Männer an der Bushaltestelle oder wie fromme Mädchen auf die Ehe.
+            Stoisch und ohne zu klagen, warten sie darauf, dass ihnen ihr wahrer Herzenswunsch begegnet.
         \end{dialog}
     \end{scene}
 
