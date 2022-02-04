@@ -299,6 +299,124 @@
         \begin{dialog}{Patrick}
             Ok, dann sehen wir uns nächste Woche!
         \end{dialog}
+
+        \actionline{Alle stehen auf.}
+    \end{scene}
+
+    \begin{scene}[cut to]{aussen}{Nach der Selbsthilfegruppe}{Nachmittag}
+        \begin{scenedescription}
+            \gls{Hazel} geht aus der Kirche hinaus und wartet vor der Tür darauf, von ihrer Mutter abgeholt zu werden.
+            \gls{Augustus} stellt sich zu ihr dazu.
+        \end{scenedescription}
+
+        \begin{dialog}{Augustus}
+            Buchstäblich im Herzen Jesu...
+            Ich dachte wir sind in einem Kirchenkeller, aber wir sind buchstäblich im Herzen Jesu.
+        \end{dialog}
+
+        \actionline{In der Ferne hört man \gls{Isaac} und seine Freundin \gls{Monica} wie sie sich küssen.
+        Außerdem knetet \gls{Isaac} \gls{Monica}s Brüste ziemlich fest.
+        Zwischen den Küssen sagen sie abwechselnd:}
+
+        \begin{dialog}[In der Ferne]{Isaac und Monica abwechselnd}
+            Für immer!
+        \end{dialog}
+
+        \begin{dialog}{Hazel}
+            Tut das nicht weh an den Möpsen?
+        \end{dialog}
+
+        \begin{dialog}{Augustus}
+            Ja, schwer zu sagen, ob er sie erregen oder eine Brustuntersuchung durchführen will.
+        \end{dialog}
+
+        \begin{dialog}{Hazel}
+            Und was soll das mit diesem "Für immer"?
+        \end{dialog}
+
+        \begin{dialog}{Augustus}
+            Das ist irgendwie ihr großes Ding.
+            Sie lieben sich \emph{für immer}, oder so.
+            Ich glaube sie haben sich die Worte \emph{für immer} circa eine Million Mal per SMS geschickt.
+        \end{dialog}
+
+        \actionline{\gls{Augustus} blickt auf Hazel und es entseht eine kurze Pause.}
+
+        \begin{dialog}{Hazel}
+            Was ist?
+        \end{dialog}
+
+        \begin{dialog}{Augustus}
+            Du siehst schön aus.
+            Ich sehe gerne schöne Menschen an und vor einer Weile habe ich beschlossen, dass ich mir die einfachen Freuden im Leben nicht mehr verkneifen werde.
+        \end{dialog}
+
+        \actionline{Augustus lächelt, es entsteht ein kurzes Schweigen.}
+
+        \begin{conditional}{selbsthilfegruppe-hazel-meldet-sich}{selbsthilfegruppe-sich-melden}
+            \begin{dialog}{Augustus}
+                Erst recht in Anbetracht der Tatsache, die du so wunderbar ausgeführt hast, dass alles in Vergessenheit endet und so weiter.
+            \end{dialog}
+        \end{conditional}
+
+        \begin{decision}{nach-selbsthilfegruppe-wie-sieht-hazel-aus}{Wie sieht \gls{Hazel} aus?}{\gls{Augustus}}
+            \begin{option}{nach-selbsthilfegruppe-hazel-sieht-aus-wie-natalie-portman}{\gls{Hazel} sieht wie Natalie Portman aus.}
+                \begin{dialog}{Augustus}
+                    Du siehst aus wie die Milleniums-Natalie Portman in V wie Vendetta.
+                \end{dialog}
+
+                \begin{dialog}{Hazel}
+                    Nie gesehen.
+                \end{dialog}
+
+                \begin{dialog}{Augustus}
+                    Wirklich?
+                    Bildhübsches Mädchen mit Kurzhaarschnitt und Abneigung gegen die Obrigkeit verliebt sich rettungslos in einen Jungen, der in Schwierigkeiten steckt.
+                    Deine Autobiografie, soweit ich es sehe.
+                \end{dialog}
+            \end{option}
+        \end{decision}
+
+        \begin{dialog}{Augustus}
+            Du solltest dir den Film ansehen.
+        \end{dialog}
+
+        \begin{dialog}{Hazel}
+            Okay, ich leihe ihn mir mal aus.
+        \end{dialog}
+
+        \begin{dialog}{Augustus}
+            Nein.
+            Mit mir.
+            Bei uns zu Hause.
+            Jetzt.
+        \end{dialog}
+
+        \begin{dialog}{Hazel}
+            Und was, wenn du ein Axtmörder bist?
+        \end{dialog}
+
+        \begin{dialog}{Augustus}
+            Ja, das kann man nie ausschließen.
+        \end{dialog}
+
+        \actionline{\gls{Augustus} greift in seine Brusttasche und zückt eine Schachtel Zigaretten.
+        Er nimmt eine Zigarette heraus und steckt sie sich zwischen die Lippen.}
+
+        \begin{dialog}[entsetzt]{Hazel}
+            Ist das dein Ernst?
+            Findest du das cool?
+            Oh Gott, jetzt hast du alles kaputt gemacht!
+        \end{dialog}
+
+        \begin{dialog}{Augustus}
+            Alles?
+        \end{dialog}
+
+        \begin{dialog}{Hazel}
+            Das alles, wo ein Typ, der weder unattraktiv noch unintelligent noch sonst irgendwie unakzeptabel ist, mich anstarrt und sich über den falschen Gebrauch von buchstäblich lustig macht und mich mit Schauspielerinnen vergleicht und fragt, ob ich einen Film mit ihm sehen will.
+            Aber natürlich hat jeder Held seine
+        \end{dialog}
     \end{scene}
 
     \begin{scene}{aussen}{Holländisches Picknick}{Nachmittags}
@@ -413,7 +531,7 @@
         \begin{dialog}{Augutus}
             Holländischer Käse mit Tomaten. Die Tomaten sind aber aus Mexiko. Tut mir Leid.
         \end{dialog}
-        
+
         \actionline{\gls{Hazel} lacht etwas.}
 
         \begin{decision}{soll-hazel-einen-witz-ueber-tomaten-machen}{Witz über Tomaten}{Hazel}
@@ -435,12 +553,12 @@
         \begin{dialog}{Hazel}[In Gedanken]
             Ich frage mich echt, was Augustus mit all den holländischen Sachen machen will...
         \end{dialog}
-        
+
         \actionline{Etwas von den beiden entfernt spielen einige Kinder und springen von Knochen zu Knochen.}
-        
+
         \begin{dialog}{Augustus}
             Zwei Sachen, die ich an dieser Skulptur liebe:
-            
+
             \actionline{Augustus nimmt die Zigarette zwischen die Finger und schnippt damit, als wollte er die Asche abklopfen. Dann steckt er sie sich wieder in den Mund.}
 
             Erstens sind die Knochen haargenau so weit voneinander entfernt, dass jedes Kind den unwiderstehlichen Drang verspürt, zwischen ihnen hin und her zu springen.
