@@ -69,12 +69,18 @@
     \end{flushleft}
 }
 
-\newcommand{\standaloneactionline}[1]{#1}
+\newcommand{\standaloneactionline}[1]{
+    \begin{flushleft}
+        #1
+    \end{flushleft}
+}
 \newcommand{\actionline}[1]{\standaloneactionline{#1}}
 \newcommand{\dialogactionline}[2]{
     \end{flushleft}
     \end{adjustwidth}
-    #1
+    \begin{flushleft}
+        #1
+    \end{flushleft}
     \begin{adjustwidth}{6.5cm}{0cm}
         \uppercase{#2}~(\translationContinued)
     \end{adjustwidth}
