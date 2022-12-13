@@ -486,7 +486,206 @@
         \end{dialog}
     \end{scene}
 
-    \begin{scene}{aussen}{Holländisches Picknick}{Nachmittags}
+    \begin{scene}{aussen}{Fahrt zu Augustus}{Nachmittag}
+        \begin{scenedescription}
+            \gls{Hazel} und \gls{Augustus} fahren im Auto zu \gls{Augustus} nach Hause.
+            \gls{Augustus} fährt das Auto und hat einen sehr waghalsigen und holprigen Fahrstil.
+            \gls{Hazel} hält sich fest und ist ein wenig wegen des Fahrstils verängstigt.
+        \end{scenedescription}
+
+        \actionline{\gls{Augustus} hält abrupt vor einer Ampel an und weicht dabei gerade so seinem Vordermann aus, weil \gls{Augustus} sonst nicht rechtzeitig zum Stehen kam.}
+
+        \begin{dialog}{Augustus}
+            Ja, ich bin ein paar Mal durch die Prüfung gefallen.
+        \end{dialog}
+
+        \begin{dialog}[unglaubwürdig]{Hazel}
+            Merkt man gar nicht.
+        \end{dialog}
+
+        \begin{dialog}{Augustus}
+            Mit dem Holzbein spüre ich keinen Druck, aber ich kann mich einfach nicht daran gewöhnen, mit links zu fahren.
+            Also trete ich zu meiner vierten Fahrprüfung an und es läuft ungefähr so wie jetzt.
+            Am Ende war ich überzeugt, durchgefallen zu sein, aber die Prüferin meinte:
+            ``Ihr Fahrstil ist unangenehm, aber er verstößt nicht im engeren Sinn gegen die Verkehrsregeln.''
+        \end{dialog}
+
+        \begin{dialog}[lächelnd]{Hazel}
+            Krebsbonus!
+        \end{dialog}
+
+        \begin{dialog}{Augustus}
+            Ganz klarer Krebsbonus!
+        \end{dialog}
+
+        \begin{dialog}{Hazel}
+            Du weißt, dass es für Menschen mit Fußbehinderungen Handgasvorrichtungen gibt?
+        \end{dialog}
+
+        \begin{dialog}[entmutigt]{Augustus}
+            Ja, irgendwann vielleicht….
+        \end{dialog}
+
+        \begin{dialog}[In Gedanken]{Hazel}
+            Mich würde mal interessieren, wie seine Lebenserwartung ist.
+            Wie frage ich ihn das bloß am besten?
+        \end{dialog}
+
+        \begin{decision}{hazel-fragt-nach-lebenserwartung}{\gls{Hazel} fragt nach \gls{Augustus} Lebenserwartung.}{Hazel}
+            \begin{option}{hazel-fragt-nach-lebenserwartung-schule}{Gehst du zur Schule?}
+                \begin{dialog}[In Gedanken]{Hazel}
+                    Viele Eltern nehmen ihre Kinder aus der Schule, wenn ihr Kind bald ins Gras beißt.
+                    Eine unscheinbare Frage also.
+                \end{dialog}
+
+                \begin{dialog}{Hazel}
+                    Gehst du zur Schule?
+                \end{dialog}
+
+                \begin{dialog}{Augustus}
+                    Ja. North Central.
+                    Aber ich bin sitzen geblieben, ich bin jetzt in der Zehnten.
+                    Und du?
+                \end{dialog}
+
+                \begin{dialog}[In Gedanken]{Hazel}
+                    Soll ich ihm die Wahrheit sagen?
+                    ALso, ich meine, niemand steht auf wandelnde Leichen...
+                    Aber auf der anderen Seite sollte ich auch nicht lügen.
+                \end{dialog}
+
+                \begin{decision}{hazel-fragt-nach-lebenserwartung-schule-wahrheit-sagen}{Soll \gls{Hazel} die Warheit sagen?}{Hazel}
+                    \begin{option}{hazel-fragt-nach-lebenserwartung-schule-wahrheit-hazel-sagt-wahrheit}{Wahrheit sagen}
+                        \begin{dialog}{Hazel}
+                            Nein, meine Eltern haben mich vor drei Jahren rausgenommen.
+                        \end{dialog}
+
+                        \begin{dialog}[verwundert]{Augustus}
+                            Vor drei Jahren?
+                        \end{dialog}
+                    \end{option}
+                    \begin{option}{hazel-fragt-nach-lebenserwartung-schule-wahrheit-hazel-luegt}{Lügen}
+                        \begin{dialog}{Hazel}
+                            Ja, ich gehe auch auf die North Central, aber in die Zwölfte.
+                        \end{dialog}
+
+                        \begin{dialog}[verwundert]{Augustus}
+                            Hmm, komisch, dass wir uns dann noch nie gesehen haben.
+                            \pause
+                            Sag mal, wenn du noch zur Schule gehst, dann hast du ja noch lange zu leben, oder?
+                        \end{dialog}
+
+                        \begin{dialog}[In Gedanken]{Hazel}
+                            Verdammt, er kennt den Trick….
+                        \end{dialog}
+                    \end{option}
+                \end{decision}
+            \end{option}
+
+            \begin{option}{hazel-fragt-nach-lebenserwartung-ist-krebs-geheilt}{Ist dein Krebs geheilt?}
+                \begin{dialog}[In Gedanken]{Hazel}
+                    Ein bisschen direkter, aber immer noch höflich.
+                \end{dialog}
+
+                \begin{dialog}{Hazel}
+                    Du sag mal, ist dein Krebs eigentlich geheilt?
+                \end{dialog}
+
+                \begin{dialog}{Augustus}
+                    Nunja, ich hatte etwas Glück im Unglück:
+                    Der Krebs war nur im Bein, und seit ich das weg habe, habe ich auch keinen Krebs mehr.
+                    Man könnte also sagen, dass ich geheilt bin.
+                    \beat
+                    Und du, wie geht es deinem Krebs?
+                \end{dialog}
+            \end{option}
+
+            \begin{option}{hazel-fragt-nach-lebenserwartung-frage-ueber-ueberlebenschancen}{Wie sind die Überlebenschancen?}
+                \begin{dialog}[In Gedanken]{Hazel}
+                    Ein bisschen direkter, aber immer noch höflich.
+                \end{dialog}
+
+                \begin{dialog}{Hazel}
+                    Wie sind eigentlich die Überlebenschancen bei Knochenkrebs?
+                \end{dialog}
+
+                \begin{dialog}{Augustus}
+                    Oh, eigentlich ganz gut.
+                    Da ich keine Metastasen hatte, musste nur das Bein amputiert werden.
+                    Aber sonst hat man auch den ganzen anderen Mist mit Chemotherapie etc.
+                    Und Rückfälle kann man immer bekommen.
+                    \direction{seufzt}
+                    Leider.
+                    \pause
+                    Und wie sieht es bei dir aus?
+                \end{dialog}
+            \end{option}
+
+            \begin{option}{hazel-fragt-nach-lebenserwartung-direkt}{Wie ist deine Lebenserwartung?}
+                \begin{dialog}{Hazel}
+                    Wie ist eigentlich deine Lebenserwartung?
+                \end{dialog}
+
+                \begin{dialog}[verärgert]{Augustus}
+                    Also hör mal, ist das nicht ein wenig unhöflich, von so einem vornehmen Mädchen wie du?
+                    \direction{etwas weniger verärgert}
+                    Bei mir ist alles zum Glück weg - dank der Amputation.
+                    Aber Rückfälle können natürlich immer kommen.
+                    Und wie ist deine Lebenserwartung so?
+                \end{dialog}
+            \end{option}
+        \end{decision}
+
+        \begin{dialog}{Hazel}
+            Naja, es geht so.
+            Meine erste Diagnose hatte ich mit dreizehn: Schilddrüsenkrebs, Stadium IV\@.
+            Angeblich unheilbar.
+            Ich hatte damals auch eine Operation mit diesem netten Namen ``Radikale Neck-Dissection'', die auch so angenehm ist, wie sie sich anhört.
+            Und dann halt Bestrahlung, Chemotherapie, etc.~gegen die Metastasen, die sich in der Lunge gebildet haben.
+            Mal half die Chemo, dann wieder nicht.
+            Mit vierzehn hatte ich dann Wasser in der Lunge und ich sah ziemlich tot aus:
+            Hände und Füße aufgeblasen, die Haut rissig, die Lippen ständig blau.
+            Ich bin quasi ertrunken - und das ist wirklich kein angenehmes Gefühl.
+            Das wäre eigentlich das Ende gewesen.
+            Aber dann fingen die Antibiotika doch an zu wirken und ich rutschte in so eine Studie rein, die in Krebsilvanien für ihre Unwirksamkeit berüchtigt sind.
+            Das Medikament hieß ``Phalanxifor''.
+            Bei über 70\% der Patienten schlug es nicht an, aber aus irgendeinem Grund bei mir schon.
+            Sie nannten es ein Wunder.
+            Natürlich ist meine Lunge immer noch eine Scheißlunge, aber theoretisch könnte sie zusammen mit Phalanxifor und meinem Sauerstoffgerät unendlich weitermachen.
+        \end{dialog}
+
+        \begin{conditional}{hazel-fragt-nach-lebenserwartung}{hazel-fragt-nach-lebenserwartung-schule}
+            \begin{conditional}{hazel-fragt-nach-lebenserwartung-schule-wahrheit-sagen}{hazel-fragt-nach-lebenserwartung-schule-wahrheit-hazel-sagt-wahrheit}
+                \begin{dialog}{Augustus}
+                    Das heißt du gehst wieder zur Schule?
+                \end{dialog}
+
+                \begin{dialog}{Hazel}
+                    Ich habe inzwischen die Hochschulreife und besuche Seminare am MCC.
+                \end{dialog}
+
+                \begin{conditional}{selbsthilfegruppe-hazel-meldet-sich}{selbsthilfegruppe-sich-melden}
+                    \begin{dialog}{Augustus}
+                        Wow, ein College-Girl.
+                        Daher also die gebildete Aura.
+                    \end{dialog}
+                \end{conditional}
+                \begin{conditional}{selbsthilfegruppe-hazel-meldet-sich}{selbsthilfegruppe-sich-nicht-melden}
+                    \begin{dialog}{Augustus}
+                        Wow, ein College-Girl.
+                    \end{dialog}
+                \end{conditional}
+            \end{conditional}
+        \end{conditional}
+
+        \actionline{\gls{Augustus} biegt auf seine Hofeinfahrt ein und räumt dabei die Mülltonnen des Nachbarn ab.}
+
+        \begin{dialog}[beschämt]{Augustus}
+            Ups.
+        \end{dialog}
+    \end{scene}
+
+    \begin{scene}{aussen}{Holländisches Picknick}{Nachmittag}
         \begin{scenedescription}
             \gls{Hazel} und \gls{Augustus} betreten den Virginia B. Fairbanks Art \& Nature Park.
             In dem Park hat der Künstler Joep van Lieshout sein Kunstwerk ``Funky bones'' ausgestellt.
