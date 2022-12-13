@@ -153,19 +153,20 @@
     \begin{adjustwidth}{\enumerateIndent}{0cm*\value{OptionEnvironmentDepth}}
     }{
     \end{adjustwidth}
-    \textit{(\translationEndOfBranch~\translationDecisionLabel~\ref{\csname DecisionLabel\the\value{DecisionEnvironmentDepth} \endcsname},~\translationOptionLabel~\ref{\currentOptionLabel})}
+    \textit{(\translationEndOfBranch~\translationDecisionLabel~\ref{\csname DecisionLabel\the\value{DecisionEnvironmentDepth} \endcsname},~\translationOptionLabel~\ref{\currentOptionLabel})\\}
     \addtocounter{OptionEnvironmentDepth}{-1}% decrement depth
 }
 
 \newcounter{ConditionalEnvironmentDepth}
 \setcounter{ConditionalEnvironmentDepth}{0}
 \newcounter{conditional}
-\newenvironment{conditional}[2]{
+\newenvironment{conditional}[3]{
     \refstepcounter{conditional}
     \addtocounter{ConditionalEnvironmentDepth}{1}% increment depth
-    \expandafter\newcommand\csname ConditionalCounter\the\value{ConditionalEnvironmentDepth} \endcsname{\theconditional}
+    \label{#3}
+    \expandafter\newcommand\csname ConditionalCounter\the\value{ConditionalEnvironmentDepth} \endcsname{#3}
     \textbf{\translationConditionalLabel~\theconditional:} \translationBeginningOfConditional~\translationDecisionLabel~\ref{#1}, \translationOptionLabel~\ref{#2}:
         }{
-    \textit{(\translationEndOfBranch~\translationConditionalLabel~\csname ConditionalCounter\the\value{ConditionalEnvironmentDepth} \endcsname.)}
+    \textit{(\translationEndOfBranch~\translationConditionalLabel~\ref{\csname ConditionalCounter\the\value{ConditionalEnvironmentDepth} \endcsname})\\}
     \addtocounter{ConditionalEnvironmentDepth}{-1}% decrement depth
 }

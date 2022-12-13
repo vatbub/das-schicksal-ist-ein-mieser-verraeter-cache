@@ -353,7 +353,7 @@
 
         \actionline{Augustus lächelt, es entsteht ein kurzes Schweigen.}
 
-        \begin{conditional}{selbsthilfegruppe-hazel-meldet-sich}{selbsthilfegruppe-sich-melden}
+        \begin{conditional}{selbsthilfegruppe-hazel-meldet-sich}{selbsthilfegruppe-sich-melden}{conditional:augustus-lobt-hazel-weil-sie-sich-gemeldet-hat}
             \begin{dialog}{Augustus}
                 Erst recht in Anbetracht der Tatsache, die du so wunderbar ausgeführt hast, dass alles in Vergessenheit endet und so weiter.
             \end{dialog}
@@ -409,7 +409,7 @@
             Jetzt.
         \end{dialog}
 
-        \begin{conditional}{nach-selbsthilfegruppe-wie-sieht-hazel-aus}{nach-selbsthilfegruppe-hazel-sieht-aus-wie-natalie-portman}
+        \begin{conditional}{nach-selbsthilfegruppe-wie-sieht-hazel-aus}{nach-selbsthilfegruppe-hazel-sieht-aus-wie-natalie-portman}{conditional:axtmoerder-wie-portman}
             \begin{dialog}{Hazel}
                 Und was, wenn du ein Axtmörder bist?
             \end{dialog}
@@ -419,7 +419,7 @@
             \end{dialog}
         \end{conditional}
 
-        \begin{conditional}{nach-selbsthilfegruppe-wie-sieht-hazel-aus}{nach-selbsthilfegruppe-hazel-sieht-aus-wie-eva-green-aus}
+        \begin{conditional}{nach-selbsthilfegruppe-wie-sieht-hazel-aus}{nach-selbsthilfegruppe-hazel-sieht-aus-wie-eva-green-aus}{conditional:axtmoerder-wie-green}
             \begin{dialog}{Hazel}
                 Und was, wenn du ein Axtmörder bist?
                 So wie dieser James Bond?
@@ -654,27 +654,25 @@
             Natürlich ist meine Lunge immer noch eine Scheißlunge, aber theoretisch könnte sie zusammen mit Phalanxifor und meinem Sauerstoffgerät unendlich weitermachen.
         \end{dialog}
 
-        \begin{conditional}{hazel-fragt-nach-lebenserwartung}{hazel-fragt-nach-lebenserwartung-schule}
-            \begin{conditional}{hazel-fragt-nach-lebenserwartung-schule-wahrheit-sagen}{hazel-fragt-nach-lebenserwartung-schule-wahrheit-hazel-sagt-wahrheit}
+        \begin{conditional}{hazel-fragt-nach-lebenserwartung-schule-wahrheit-sagen}{hazel-fragt-nach-lebenserwartung-schule-wahrheit-hazel-sagt-wahrheit}{conditional:hazel-hat-nach-schule-gefragt}
+            \begin{dialog}{Augustus}
+                Das heißt du gehst wieder zur Schule?
+            \end{dialog}
+
+            \begin{dialog}{Hazel}
+                Ich habe inzwischen die Hochschulreife und besuche Seminare am MCC\@.
+            \end{dialog}
+
+            \begin{conditional}{selbsthilfegruppe-hazel-meldet-sich}{selbsthilfegruppe-sich-melden}{conditional:hazel-hat-nach-schule-gefragt-und-sich-gemeldet}
                 \begin{dialog}{Augustus}
-                    Das heißt du gehst wieder zur Schule?
+                    Wow, ein College-Girl.
+                    Daher also die gebildete Aura.
                 \end{dialog}
-
-                \begin{dialog}{Hazel}
-                    Ich habe inzwischen die Hochschulreife und besuche Seminare am MCC.
+            \end{conditional}
+            \begin{conditional}{selbsthilfegruppe-hazel-meldet-sich}{selbsthilfegruppe-sich-nicht-melden}{conditional:hazel-hat-nach-schule-gefragt-sich-aber-nicht-gemeldet}
+                \begin{dialog}{Augustus}
+                    Wow, ein College-Girl.
                 \end{dialog}
-
-                \begin{conditional}{selbsthilfegruppe-hazel-meldet-sich}{selbsthilfegruppe-sich-melden}
-                    \begin{dialog}{Augustus}
-                        Wow, ein College-Girl.
-                        Daher also die gebildete Aura.
-                    \end{dialog}
-                \end{conditional}
-                \begin{conditional}{selbsthilfegruppe-hazel-meldet-sich}{selbsthilfegruppe-sich-nicht-melden}
-                    \begin{dialog}{Augustus}
-                        Wow, ein College-Girl.
-                    \end{dialog}
-                \end{conditional}
             \end{conditional}
         \end{conditional}
 
@@ -929,7 +927,7 @@
             \end{option}
         \end{decision}
 
-        \begin{conditional}{erste-entscheidung}{test-label}
+        \begin{conditional}{erste-entscheidung}{test-label}{conditional:test-conditional}
             \begin{dialog}{Polizist}
                 Leider haben Sie die falsche option bei Entscheidung~\ref{erste-entscheidung} gewählt.
             \end{dialog}
