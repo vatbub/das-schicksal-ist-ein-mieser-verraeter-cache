@@ -375,6 +375,23 @@
                     Deine Autobiografie, soweit ich es sehe.
                 \end{dialog}
             \end{option}
+            \begin{option}{nach-selbsthilfegruppe-hazel-sieht-aus-wie-eva-green-aus}{\gls{Hazel} sieht wie Eva Green aus.}
+                \begin{dialog}{Augustus}
+                    Du siehst aus wie Eva Green aus James Bond - Casino Royale aus.
+                \end{dialog}
+
+                \begin{dialog}{Hazel}
+                    Nie gesehen.
+                \end{dialog}
+
+                \begin{dialog}{Augustus}
+                    Wirklich?
+                    Du hast James Bond nie gesehen?
+                    Und speziell dieses Bond-Girl!
+                    Bildhübsches Mädchen mit schwarzen Haaren verliebt sich rettungslos in einen Helden, der in Schwierigkeiten steckt.
+                    Deine Autobiografie, soweit ich es sehe.
+                \end{dialog}
+            \end{option}
         \end{decision}
 
         \begin{dialog}{Augustus}
@@ -392,13 +409,26 @@
             Jetzt.
         \end{dialog}
 
-        \begin{dialog}{Hazel}
-            Und was, wenn du ein Axtmörder bist?
-        \end{dialog}
+        \begin{conditional}{nach-selbsthilfegruppe-wie-sieht-hazel-aus}{nach-selbsthilfegruppe-hazel-sieht-aus-wie-natalie-portman}
+            \begin{dialog}{Hazel}
+                Und was, wenn du ein Axtmörder bist?
+            \end{dialog}
 
-        \begin{dialog}{Augustus}
-            Ja, das kann man nie ausschließen.
-        \end{dialog}
+            \begin{dialog}{Augustus}
+                Ja, das kann man nie ausschließen.
+            \end{dialog}
+        \end{conditional}
+
+        \begin{conditional}{nach-selbsthilfegruppe-wie-sieht-hazel-aus}{nach-selbsthilfegruppe-hazel-sieht-aus-wie-eva-green-aus}
+            \begin{dialog}{Hazel}
+                Und was, wenn du ein Axtmörder bist?
+                So wie dieser James Bond?
+            \end{dialog}
+
+            \begin{dialog}{Augustus}
+                Haha, man merkt, dass du keine Ahnung von James Bond hast! \direction{zwinkert}
+            \end{dialog}
+        \end{conditional}
 
         \actionline{\gls{Augustus} greift in seine Brusttasche und zückt eine Schachtel Zigaretten.
         Er nimmt eine Zigarette heraus und steckt sie sich zwischen die Lippen.}
@@ -414,15 +444,52 @@
         \end{dialog}
 
         \begin{dialog}{Hazel}
-            Das alles, wo ein Typ, der weder unattraktiv noch unintelligent noch sonst irgendwie unakzeptabel ist, mich anstarrt und sich über den falschen Gebrauch von buchstäblich lustig macht und mich mit Schauspielerinnen vergleicht und fragt, ob ich einen Film mit ihm sehen will.
-            Aber natürlich hat jeder Held seine
+            Das alles, wo ein Typ, der weder unattraktiv noch unintelligent noch sonst irgendwie unakzeptabel ist, mich anstarrt und sich über den falschen Gebrauch von ``buchstäblich'' lustig macht und mich mit Schauspielerinnen vergleicht und fragt, ob ich einen Film mit ihm sehen will.
+            Es gibt immer eine Hamartie, oder?
+            Und deine ist, dass du dir \direction{verärgert} obwohl du schonmal Krebs hattest einer Firma Geld bezahlst, um nochmal Krebs zu bekommen!
+            Ich kann dir versichern:
+            \direction{ausrufend}
+            Nicht atmen zu können ist richtig scheiße!
+        \end{dialog}
+
+        \begin{dialog}{Augustus}
+            Hamartie?
+        \end{dialog}
+
+        \begin{dialog}{Hazel}
+            Ein tödlicher Fehler.
+        \end{dialog}
+
+        \actionline{\gls{Hazel} wendet sich von \gls{Augustus} ab und geht zum Bordstein.}
+
+        \begin{dialog}[lächelnd]{Augustus}
+            Weißt du, sie bringen einen nur um, wenn man sie anzündet.
+            Es ist eine Metapher: Du steckst dir das tödliche Ding in den Mund, gibst ihm aber nicht die Kraft, dich zu töten.
+        \end{dialog}
+
+        \begin{dialog}[argwöhnisch]{Hazel}
+            Eine Metapher?
+        \end{dialog}
+
+        \begin{dialog}{Augustus}
+            Eine Metapher.
+        \end{dialog}
+
+        \actionline{\gls{Hazels Mutter} kommt mit dem Auto an, um \gls{Hazel} abzuholen.}
+
+        \begin{dialog}{Mutter}
+            Hey Mäuschen, Top Model wartet!
+        \end{dialog}
+
+        \begin{dialog}{Hazel}
+            Nein Mom, ich werde mir mit A\gls{Augustus} Waters einen Film ansehen.
         \end{dialog}
     \end{scene}
 
     \begin{scene}{aussen}{Holländisches Picknick}{Nachmittags}
         \begin{scenedescription}
             \gls{Hazel} und \gls{Augustus} betreten den Virginia B. Fairbanks Art \& Nature Park.
-            In dem Park hat der Künstler Joep van Lieshout sein Kunstwerk "Funky bones" ausgestellt.
+            In dem Park hat der Künstler Joep van Lieshout sein Kunstwerk ``Funky bones'' ausgestellt.
             Das Kunstwerk besteht aus 20 Sitzbänken ohne Lehne, welche in Form eines menschlichen Skeletts angeordnet und auch entsprechend bemalt sind.
             \gls{Hazel} und \gls{Augustus} betreten den Park über einen Kiesweg.
             \gls{Augustus} in der einen Hand Einen Tulpenstrauß und in der anderen einen Picknick-Korb, in dem Tomaten-Käse-Sandwiches sind.
